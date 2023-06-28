@@ -1,0 +1,594 @@
+{
+	"info": {
+		"_postman_id": "8ebe8c16-f8b7-43e2-8e14-fc288b0b2e7e",
+		"name": "Restaurant API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9380691"
+	},
+	"item": [
+		{
+			"name": "Menu Items",
+			"item": [
+				{
+					"name": "Create Menu Item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"Burger\",\r\n            \"description\": \"Burger\",\r\n            \"price\": 1000\r\n        }"
+						},
+						"url": "https://localhost:7183/api/Menu"
+					},
+					"response": [
+						{
+							"name": "Create Menu Item",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mineral Water\",\r\n    \"description\": \"Water\",\r\n    \"price\": 1000\r\n}"
+								},
+								"url": "https://localhost:7183/api/Menu"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Jun 2023 21:35:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Menu item created successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Mineral Water\",\n        \"description\": \"Water\",\n        \"price\": 1000\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Menu Item",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": "https://localhost:7183/api/Menu"
+					},
+					"response": [
+						{
+							"name": "Get All Menu Item",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									}
+								],
+								"url": "https://localhost:7183/api/Menu"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Jun 2023 21:36:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Menu items retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Burger\",\n            \"description\": \"Spicy Burger\",\n            \"price\": 1000\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Mineral Water\",\n            \"description\": \"Water\",\n            \"price\": 1000\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Menu Item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"Burger\",\r\n            \"description\": \"Spicy Burger\",\r\n            \"price\": 1000\r\n        }"
+						},
+						"url": "https://localhost:7183/api/Menu/1"
+					},
+					"response": [
+						{
+							"name": "Update Menu Item",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Mineral Water\",\r\n            \"description\": \"Water\",\r\n            \"price\": 1000\r\n        }"
+								},
+								"url": "https://localhost:7183/api/Menu/3"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Jun 2023 21:36:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Menu item updated successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Mineral Water\",\n        \"description\": \"Water\",\n        \"price\": 1000\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Menu Item By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": "https://localhost:7183/api/Menu/3"
+					},
+					"response": [
+						{
+							"name": "Delete Menu Item",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									}
+								],
+								"url": "https://localhost:7183/api/Menu/3"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Jun 2023 21:38:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Menu item deleted successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Mineral Water\",\n        \"description\": \"Water\",\n        \"price\": 1000\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Menu Item By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": "https://localhost:7183/api/Menu/1"
+					},
+					"response": [
+						{
+							"name": "Get Menu Item By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									}
+								],
+								"url": "https://localhost:7183/api/Menu/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Jun 2023 09:41:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Menu item retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Burger\",\n        \"description\": \"Burger\",\n        \"price\": 5000\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"menuItemIds\": [\r\n    1,2,3,3,2\r\n  ]\r\n}"
+						},
+						"url": "https://localhost:7183/api/orders"
+					},
+					"response": [
+						{
+							"name": "Create Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"menuItemIds\": [\r\n    1,2,2\r\n  ]\r\n}"
+								},
+								"url": "https://localhost:7183/api/orders"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Jun 2023 09:49:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Order created successfully\",\n    \"data\": {\n        \"orderID\": 1,\n        \"menuItemDetail\": [\n            {\n                \"menuId\": 1,\n                \"name\": \"Water\"\n            },\n            {\n                \"menuId\": 2,\n                \"name\": \"Burger\"\n            }\n        ],\n        \"totalPrice\": 3000\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": "https://localhost:7183/api/orders"
+					},
+					"response": [
+						{
+							"name": "Get All Orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									}
+								],
+								"url": "https://localhost:7183/api/orders"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Jun 2023 09:43:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Orders retrieved successfully\",\n    \"data\": [\n        {\n            \"orderID\": 1,\n            \"menuItemIds\": [\n                1,\n                2\n            ],\n            \"totalPrice\": 6000,\n            \"status\": \"In Progress\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Order By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": "https://localhost:7183/api/orders/1"
+					},
+					"response": [
+						{
+							"name": "Get Order By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									}
+								],
+								"url": "https://localhost:7183/api/orders/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Jun 2023 09:43:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Order retrieved successfully\",\n    \"data\": {\n        \"orderID\": 1,\n        \"menuItemIds\": [\n            1,\n            2\n        ],\n        \"totalPrice\": 6000,\n        \"status\": \"In Progress\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"menuItemIds\": [\r\n    1\r\n  ],\r\n  \"totalPrice\": 5000,\r\n  \"status\": \"In Progress\"\r\n}"
+						},
+						"url": "https://localhost:7183/api/orders/1"
+					},
+					"response": [
+						{
+							"name": "Update Order",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"menuItemIds\": [\r\n    1\r\n  ],\r\n  \"totalPrice\": 10000,\r\n  \"status\": \"In Progress\"\r\n}"
+								},
+								"url": "https://localhost:7183/api/orders/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Jun 2023 09:50:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Order updated successfully\",\n    \"data\": {\n        \"orderID\": 1,\n        \"menuItemIds\": [\n            1\n        ],\n        \"totalPrice\": 10000,\n        \"status\": \"In Progress\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Order By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": "https://localhost:7183/api/orders/1"
+					},
+					"response": [
+						{
+							"name": "Delete Order By Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									}
+								],
+								"url": "https://localhost:7183/api/orders/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Jun 2023 09:51:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"statusMessage\": \"Success\",\n    \"responseMessage\": \"Order deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

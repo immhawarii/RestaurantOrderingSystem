@@ -7,6 +7,8 @@ using System.Text;
 using RestaurantOrderingSystem.Models.Request;
 using RestaurantOrderingSystem.Models.Response;
 using Hangfire;
+using Hangfire.Dashboard;
+using Hangfire.Server;
 
 namespace RestaurantOrderingSystem.Controllers
 {
@@ -110,9 +112,6 @@ namespace RestaurantOrderingSystem.Controllers
                 // Enqueue a Hangfire background job to update the order status
                 var jobId = BackgroundJob.Schedule(() => _orderRepository.UpdateOrderStatusAsync(orderId), TimeSpan.FromSeconds(5));
 
-                //// Start the asynchronous process to update the order status after a delay
-                //await _orderRepository.UpdateOrderStatusAsync(orderId);
-
                 var response = new OrderWithMenuItemsResponse
                 {
                     OrderID = orderId,
@@ -138,18 +137,31 @@ namespace RestaurantOrderingSystem.Controllers
 
         // PUT: api/orders/{id}
         [HttpPut("{id}")]
-        public async Task<ActionResult<BaseResponse<Order>>> UpdateOrder(int id, Order order)
+        public async Task<ActionResult<BaseResponse<Order>>> UpdateOrder(int id, OrderUpdateRequest request)
         {
             try
             {
-                if (id != order.OrderID)
+                var orderItem = new Order
                 {
-                    return BadRequest();
+                    OrderID = id,
+                    MenuItemIds = request.MenuItemIds,
+                    TotalPrice = request.TotalPrice,
+                    Status = request.Status
+                };
+
+                var existingItem = await _orderRepository.GetOrderById(id);
+                if (existingItem == null)
+                {
+                    _logger.LogWarning($"Menu item with ID {id} not found.");
+                    var errRes = new BaseResponse<Order>(404, "Not Found", "Order not found", null);
+                    await LogRequest(Request.Path, Request.Method, HttpContext.Request, Response.StatusCode, JsonSerializer.Serialize(errRes));
+
+                    return NotFound(errRes);
                 }
 
-                await _orderRepository.UpdateOrder(order);
+                await _orderRepository.UpdateOrder(orderItem);
 
-                var result = new BaseResponse<Order>(200, "Success", "Order updated successfully", order);
+                var result = new BaseResponse<Order>(200, "Success", "Order updated successfully", orderItem);
                 _logger.LogInformation($"Order with ID {id} updated successfully.");
                 await LogRequest(Request.Path, Request.Method, HttpContext.Request, Response.StatusCode, JsonSerializer.Serialize(result));
 
