@@ -27,27 +27,19 @@ The following API endpoints are available:
 
 Menu API
 
-GET /api/menu: Retrieve all menu items.
-
-GET /api/menu/{id}: Retrieve a specific menu item by ID.
-
-POST /api/menu: Create a new menu item.
-
-PUT /api/menu/{id}: Update a menu item.
-
-DELETE /api/menu/{id}: Delete a menu item.
+- GET /api/menu: Retrieve all menu items.
+- GET /api/menu/{id}: Retrieve a specific menu item by ID.
+- POST /api/menu: Create a new menu item.
+- PUT /api/menu/{id}: Update a menu item.
+- DELETE /api/menu/{id}: Delete a menu item.
 
 Orders API
 
-GET /api/orders: Retrieve all orders.
-
-GET /api/orders/{id}: Retrieve a specific order by ID.
-
-POST /api/orders: Create a new order.
-
-PUT /api/orders/{id}: Update an order.
-
-DELETE /api/orders/{id}: Delete an order.
+- GET /api/orders: Retrieve all orders.
+- GET /api/orders/{id}: Retrieve a specific order by ID.
+- POST /api/orders: Create a new order.
+- PUT /api/orders/{id}: Update an order.
+- DELETE /api/orders/{id}: Delete an order.
 
 Swagger Documentation
 The project is integrated with Swagger for API documentation. You can access the Swagger UI by navigating to https://localhost:5001/swagger in your browser. The Swagger UI provides detailed information about the available endpoints, request/response models, and allows you to interact with the APIs.
