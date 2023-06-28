@@ -51,7 +51,7 @@ The following API endpoints are available:
 The project is currently configured to use an in-memory database for development purposes. If you want to use a different database, you can modify the database connection string in the appsettings.json file.
 
 ## Logging
-The project utilizes logging to capture important events and errors. The log files are stored in the Logs directory and are named based on the date.
+The project utilizes logging to capture important events and errors. The log files are stored also in memory.
 
 ## API Documentation
 The API documentation is available in Postman JSON format. You can find the file `Restaurant API.postman_collection.json` in the repository.
