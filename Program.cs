@@ -31,6 +31,17 @@ builder.Services.AddHangfire(configuration => configuration
 
 builder.Services.AddHangfireServer();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://127.0.0.1:5500") // Specify the allowed origin here
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+
 // Register the Swagger generator
 builder.Services.AddSwaggerGen(c =>
 {
@@ -38,6 +49,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+app.UseCors("AllowSpecificOrigin");
 
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
@@ -61,11 +74,5 @@ app.MapControllers();
 
 // Start Hangfire server
 app.UseHangfireDashboard();
-
-app.UseCors(policy => {
-    policy.WithOrigins("http://127.0.0.1:5500") // Specify the allowed origin here
-          .AllowAnyHeader()
-          .AllowAnyMethod();
-});
 
 app.Run();
