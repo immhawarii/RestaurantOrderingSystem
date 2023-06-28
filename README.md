@@ -17,7 +17,7 @@ This project uses the following NuGet packages:
 ## Installation and Setup
 
 1. Clone the repository:
-   git clone https://github.com/your-username/restaurant-ordering-system.git
+   `git clone https://github.com/your-username/restaurant-ordering-system.git`
 
 2. Navigate to the project directory:
    cd restaurant-ordering-system
@@ -33,19 +33,19 @@ The following API endpoints are available:
 
 ## Menu API
 
-- GET /api/menu: Retrieve all menu items.
-- GET /api/menu/{id}: Retrieve a specific menu item by ID.
-- POST /api/menu: Create a new menu item.
-- PUT /api/menu/{id}: Update a menu item.
-- DELETE /api/menu/{id}: Delete a menu item.
+- GET `/api/menu`: Retrieve all menu items.
+- GET `/api/menu/{id}`: Retrieve a specific menu item by ID.
+- POST `/api/menu`: Create a new menu item.
+- PUT `/api/menu/{id}`: Update a menu item.
+- DELETE `/api/menu/{id}`: Delete a menu item.
 
 ## Orders API
 
-- GET /api/orders: Retrieve all orders.
-- GET /api/orders/{id}: Retrieve a specific order by ID.
-- POST /api/orders: Create a new order.
-- PUT /api/orders/{id}: Update an order.
-- DELETE /api/orders/{id}: Delete an order.
+- GET `/api/orders`: Retrieve all orders.
+- GET `/api/orders/{id}`: Retrieve a specific order by ID.
+- POST `/api/orders`: Create a new order.
+- PUT `/api/orders/{id}`: Update an order.
+- DELETE `/api/orders/{id}`: Delete an order.
 
 ## Database Configuration
 The project is currently configured to use an in-memory database for development purposes. If you want to use a different database, you can modify the database connection string in the appsettings.json file.
@@ -53,3 +53,5 @@ The project is currently configured to use an in-memory database for development
 ## Logging
 The project utilizes logging to capture important events and errors. The log files are stored in the Logs directory and are named based on the date.
 
+## API Documentation
+The API documentation is available in Postman JSON format. You can find the file `Restaurant API.postman_collection.json` in the repository.
