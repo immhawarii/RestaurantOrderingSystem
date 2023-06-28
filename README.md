@@ -17,21 +17,25 @@ This project uses the following NuGet packages:
 ## Installation and Setup
 
 1. Clone the repository:
-   `git clone https://github.com/your-username/restaurant-ordering-system.git`
+   ```sh
+   git clone https://github.com/your-username/restaurant-ordering-system.git
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
+   ```sh
    cd restaurant-ordering-system
 
-3. Build the project:
+5. Build the project:
+   ```sh
    dotnet build
    
-5. Run the project:
+7. Run the project:
+   ```sh
    dotnet run
 
 ## API Endpoints
 The following API endpoints are available:
 
-## Menu API
+### Menu API
 
 - GET `/api/menu`: Retrieve all menu items.
 - GET `/api/menu/{id}`: Retrieve a specific menu item by ID.
@@ -39,7 +43,7 @@ The following API endpoints are available:
 - PUT `/api/menu/{id}`: Update a menu item.
 - DELETE `/api/menu/{id}`: Delete a menu item.
 
-## Orders API
+### Orders API
 
 - GET `/api/orders`: Retrieve all orders.
 - GET `/api/orders/{id}`: Retrieve a specific order by ID.
